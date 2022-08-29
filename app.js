@@ -76,7 +76,7 @@ prevBtn.addEventListener("click", function () {
   }
   showPerson(currentItem);
 });
-// show random person math.floor rounds upto the nearest integer
+// show random person, math.floor rounds upto the nearest integer
 randomBtn.addEventListener("click", function () {
   currentItem = Math.floor(Math.random() * reviews.length);
 
