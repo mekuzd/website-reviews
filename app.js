@@ -79,6 +79,6 @@ prevBtn.addEventListener("click", function () {
 // show random person math.floor rounds upto the nearest integer
 randomBtn.addEventListener("click", function () {
   currentItem = Math.floor(Math.random() * reviews.length);
-  console.log(currentItem);
+
   showPerson(currentItem);
 });
