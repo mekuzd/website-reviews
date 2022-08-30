@@ -1,4 +1,4 @@
-// local reviews data
+// local reviews data  
 const reviews = [
   {
     id: 1,
@@ -50,28 +50,20 @@ const randomBtn = document.querySelector(".random-btn");
 // set starting item
 let currentItem = 0;
 
-// load initial item
-// window.addEventListener("DOMContentLoaded", function () {
-//   const item = reviews[currentItem];
-//   img.src = item.img;
-//   author.textContent = item.name;
-//   job.textContent = item.job;
-//   info.textContent = item.text;
-// });
-
 // show person based on item
 showPerson()
 function showPerson() {
   const item = reviews[currentItem];
   img.src = item.img;
-  author.textContent = item.name;
-  job.textContent = item.job;
-  info.textContent = item.text;
+  author.innerHTML = item.name;
+  job.innerHTML = item.job;
+  info.innerHTML = item.text;
+
 }
-// show next person
+//  show next person
 nextBtn.addEventListener("click", function () {
   currentItem++;
-  if (currentItem > reviews.length - 1) {
+  if (currentItem >= reviews.length) {
     currentItem = 0;
   }
   showPerson(currentItem);
@@ -84,10 +76,9 @@ prevBtn.addEventListener("click", function () {
   }
   showPerson(currentItem);
 });
-// show random person
+// show random person math.floor rounds upto the nearest integer
 randomBtn.addEventListener("click", function () {
-  console.log("hello");
-
   currentItem = Math.floor(Math.random() * reviews.length);
+  console.log(currentItem);
   showPerson(currentItem);
 });
